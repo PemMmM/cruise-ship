@@ -1,11 +1,22 @@
+const Port = require("../src/Port.js");
+
 class Ship {
-    constructor(startingPoint) {
-        this.startingPoint = startingPoint;
+  constructor(currentPort) {
+    this.currentPort = currentPort;
+  }
+
+  setSail() {
+    if ((this.currentPort = "")) {
+      return false;
     }
-    
-};
+  }
 
-const ship = new Ship('Dover');
+  dock(port) {
+    this.currentPort = port;
+  }
+}
 
+const ship = new Ship("Dover");
 
-module.exports = Ship
+// console.log(ship.setSail("kyrenia"));
+module.exports = Ship;
